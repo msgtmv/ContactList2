@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Contact List View Controller-->
         <scene sceneID="sPu-Hv-fif">
             <objects>
-                <tableViewController id="bZu-7T-vvd" sceneMemberID="viewController">
+                <tableViewController id="bZu-7T-vvd" customClass="ContactListViewController" customModule="ContactList2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="y2I-yP-rle">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,21 +49,67 @@
             </objects>
             <point key="canvasLocation" x="2062" y="-318"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="mZk-R7-Twn">
             <objects>
-                <viewController id="8lT-ev-qvM" sceneMemberID="viewController">
+                <viewController id="8lT-ev-qvM" customClass="DetailsViewController" customModule="ContactList2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiP-yw-ZMd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="QF0-Jw-k96">
+                                <rect key="frame" x="16" y="171" width="53" height="59.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTf-ut-Ghf">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-WA-Q9e">
+                                        <rect key="frame" x="0.0" y="39.333333333333343" width="53" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-up-1nz">
+                                <rect key="frame" x="79" y="171" width="41.333333333333343" height="59.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gB-JS-gQ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ih-0I-73n">
+                                        <rect key="frame" x="0.0" y="39.333333333333343" width="41.333333333333336" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="h4C-GP-4Ep"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QF0-Jw-k96" firstAttribute="leading" secondItem="h4C-GP-4Ep" secondAttribute="leading" constant="16" id="3E9-id-hgZ"/>
+                            <constraint firstItem="hfm-up-1nz" firstAttribute="leading" secondItem="QF0-Jw-k96" secondAttribute="trailing" constant="10" id="bBw-Kq-kST"/>
+                            <constraint firstItem="hfm-up-1nz" firstAttribute="top" secondItem="h4C-GP-4Ep" secondAttribute="top" constant="16" id="jeK-C3-kIK"/>
+                            <constraint firstItem="QF0-Jw-k96" firstAttribute="top" secondItem="JiP-yw-ZMd" secondAttribute="topMargin" constant="16" id="laj-mG-WhH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t4C-Tj-Vkm"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="5Ih-0I-73n" id="AA7-Vd-wZi"/>
+                        <outlet property="phoneLabel" destination="0gB-JS-gQ9" id="LMF-rV-PYP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhS-UG-Wdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2960" y="-318"/>
+            <point key="canvasLocation" x="2959.5419847328244" y="-318.3098591549296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gt1-9b-Pxp">
@@ -86,7 +132,7 @@
         <!--Person List-->
         <scene sceneID="QBR-Nm-QZG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0xE-LR-RqL" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0xE-LR-RqL" customClass="TabBarController" customModule="ContactList2" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Person List" id="6Kb-8w-BUD"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="quw-B5-PnK">
@@ -103,16 +149,16 @@
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Another Contact List View Controller-->
         <scene sceneID="Uui-Vs-1qk">
             <objects>
-                <tableViewController id="yIA-b9-Z1f" sceneMemberID="viewController">
+                <tableViewController id="yIA-b9-Z1f" customClass="AnotherContactListViewController" customModule="ContactList2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6AC-aM-gd0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contact2" textLabel="e8A-oK-fan" style="IBUITableViewCellStyleDefault" id="SoU-CS-fts">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="anotherContact" textLabel="e8A-oK-fan" style="IBUITableViewCellStyleDefault" id="SoU-CS-fts">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SoU-CS-fts" id="5qi-jI-ise">
